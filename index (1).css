@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Brand Colors - Educational Tech Platform */
+    --background: 214 25% 98%;
+    --foreground: 0 0% 20%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 20%;
+
+    /* Primary: Blue #2F80ED */
+    --primary: 214 83% 56%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 214 83% 48%;
+
+    /* Secondary: Green #27AE60 */
+    --secondary: 145 63% 42%;
+    --secondary-foreground: 0 0% 100%;
+    --secondary-hover: 145 63% 36%;
+
+    /* Accent: Orange #F2994A */
+    --accent: 28 85% 61%;
+    --accent-foreground: 0 0% 100%;
+    --accent-hover: 28 85% 54%;
+
+    --muted: 214 20% 95%;
+    --muted-foreground: 0 0% 40%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 20% 88%;
+    --input: 214 20% 88%;
+    --ring: 214 83% 56%;
+
+    --radius: 0.75rem;
+
+    /* Custom tokens */
+    --gradient-hero: linear-gradient(135deg, hsl(214 83% 56%), hsl(145 63% 42%));
+    --gradient-card: linear-gradient(to bottom, hsl(0 0% 100%), hsl(214 25% 98%));
+    --shadow-sm: 0 2px 8px -2px hsl(214 20% 20% / 0.08);
+    --shadow-md: 0 4px 16px -4px hsl(214 20% 20% / 0.12);
+    --shadow-lg: 0 8px 32px -8px hsl(214 20% 20% / 0.16);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    line-height: 1.6;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    line-height: 1.2;
+    color: hsl(var(--foreground));
+  }
+
+  h1 { font-size: 2.5rem; }
+  h2 { font-size: 2rem; }
+  h3 { font-size: 1.5rem; }
+  h4 { font-size: 1.25rem; }
+
+  @media (max-width: 768px) {
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.75rem; }
+    h3 { font-size: 1.25rem; }
+  }
+}
+
+@layer utilities {
+  .gradient-text {
+    background: var(--gradient-hero);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
